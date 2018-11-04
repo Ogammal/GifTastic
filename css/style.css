@@ -1,7 +1,17 @@
-#form {
-    float: right;
-    display: block;
-}
+
 #gifs {
-    width: 60%;
+    margin-left: 10px;
+}
+.btn {
+    margin: 10px 1px 10px 2px;
+}
+#buttons-display {
+    margin-left: 10px;
+}
+.set {
+    width: 50%;
+    float: left;
+}
+body {
+    background-image: url("../images/background.png");
 }

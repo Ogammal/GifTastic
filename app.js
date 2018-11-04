@@ -24,7 +24,7 @@ function addButtons() {
     $('#buttons-display').append(button);
     button.text(buttons[i]);
     button.val(buttons[i]);
-    button.addClass('btn');
+    button.addClass('btn btn-outline-primary');
 }
 
 for (var i = 0; i < buttons.length; i++) {
@@ -42,7 +42,7 @@ $(document).on("click", ".btn", function() {
     method: "GET"
     })
     .then(function(response) {
-        console.log(queryURL)
+        console.log(response)
         var results = response.data;
         for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");          
@@ -50,12 +50,13 @@ $(document).on("click", ".btn", function() {
             var p = $("<p>").text("Rating: " + rating);
             var sportImage = $("<img>");
             sportImage.attr({
-                "src": results[i].images.downsized_still.url, 
-                "data-still": results[i].images.downsized_still.url, 
-                "data-animate": results[i].images.downsized.url,
+                "src": results[i].images.fixed_height_still.url, 
+                "data-still": results[i].images.fixed_height_still.url, 
+                "data-animate": results[i].images.fixed_height.url,
                 "data-state": "still"
             }); 
             sportImage.addClass("img");
+            gifDiv.addClass("set");
             gifDiv.append(p);
             gifDiv.append(sportImage);
             $("#gifs").prepend(gifDiv);
