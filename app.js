@@ -24,14 +24,14 @@ function addButtons() {
     $('#buttons-display').append(button);
     button.text(buttons[i]);
     button.val(buttons[i]);
-    button.addClass('btn btn-outline-primary');
+    button.addClass('btn btn-outline-primary btn1');
 }
 
 for (var i = 0; i < buttons.length; i++) {
     addButtons();
 }
 
-$(document).on("click", ".btn", function() {
+$(document).on("click", ".btn1", function() {
     var sport = $(this).val();
     console.log(sport);
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
